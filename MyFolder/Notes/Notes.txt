@@ -1,0 +1,19 @@
+  Map1                  			Map2                           Map3
+  Partitioner1           			Partitioner2                   Partitioner3
+  (Combiner1,Combiner2..) 			(Combiner3,Combiner4..)        (Combiner5,Combiner6..)
+  
+Each and every record goes to map function
+If multiple Maps are there then records will divide to them
+Each key,value output of each map function goes to partitioner function
+Partitioner keeps partitioned data of each mapper
+At the end of one mapper completion combiner gets called for each partitioned group
+Partitioner sends keys to combiner in partition groups (eg (1,1,1) first partition    (1,1) second partition)
+After each mapper partitioner and combiner finishes
+Then Partitioner will send all keys having same partition across all the mappers to one single reducer
+
+No of mappers reducers and combiners means different instances gets created in different containers
+
+Command to run mapreduce-
+hdfs dfs -rm -r /mr/output/* && hadoop jar ../local_files/mr.jar com.test.mapreduce.WordCount -D mapreduce.input.fileinputformat.split.maxsize=100 -D mapreduce.job.reduces=2 /mr/input/wc1.txt /mr/output/op && hdfs dfs -cat /mr/output/op/part-r-00000
+
+configuration in program overwrite passed config params

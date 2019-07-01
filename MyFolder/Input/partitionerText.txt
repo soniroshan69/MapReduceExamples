@@ -1,0 +1,14 @@
+Emp_id	name	age	gender	salary
+6001	aaaaa	45	Male	50000
+6002	bbbbb	40	Female	50000
+6003	ccccc	34	Male	30000
+6004	ddddd	30	Male	30000
+6005	eeeee	20	Male	40000
+6006	fffff	25	Female	35000
+6007	ggggg	20	Female	15000
+6008	hhhhh	19	Female	15000
+6009	iiiii	22	Male	22000
+6010	jjjjj	24	Male	25000
+6011	kkkk	25	Male	25000
+6012	hhhh	28	Male	20000
+6013	tttt	18	Female	8000
